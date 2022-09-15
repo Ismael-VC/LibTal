@@ -1,0 +1,20 @@
+%EMIT { .Console/write DEO } ( a -- )
+
+(
+		%print-str ( str* -- )
+		
+	Prints a null byte ( 00 ) terminated string.
+
+	# Usage
+
+	```
+	|0100 ( -> ) [
+		;hello-str print-str
+		HALT
+		BREAK
+	]
+	( data )
+	@hello-str "Hello \s "world! \n \0
+	```
+)
+%print-str { ;print-str JSR2 }

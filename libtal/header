@@ -1,0 +1,27 @@
+( devices )
+~libtal/devices
+
+( macros )
+~libtal/system/macros
+~libtal/console/macros
+
+
+%CALL2 { JSR2 } ( addr* -- )
+%CALL { JSR }
+%IF { JCN }
+%RETURN { JMPr2 } ( -- )
+%> { GTH }
+%* { MUL }
+%+ { ADD }
+%& { AND }
+%BREAK { BRK }
+%++ { INC2 }
+%\n { 0a }
+%\s { 20 }
+%\0 { 00 }
+%WRITE { DEO }
+%SWAP { SWP }
+%SHIFT { SFT }
+%COPY { DUP }
+%LOADk { LDAk }
+%NEXT { ++ LDAk }

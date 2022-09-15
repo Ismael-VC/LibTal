@@ -1,0 +1,45 @@
+%HALT  { #01 .System/halt DEO  } ( -- )
+%DEBUG { #01 .System/debug DEO } ( -- )
+
+%System/r-set { .System/r DEO2 }
+%System/g-set { .System/g DEO2 }
+%System/b-set { .System/b DEO2 }
+
+%System/r-get { .System/r DEI2 }
+%System/g-get { .System/g DEI2 }
+%System/b-get { .System/b DEI2 }
+
+
+(
+		System/rgb-set ( r^ g^ b^ -- )
+
+	Sets `System`'s `&r`, `&g` and `&b` ports values.
+
+	# Usage
+
+	```
+	#0fe5 #0fc5 #0f25 System/rgb-set
+	``` 
+)
+%System/rgb-set {
+	System/b-set
+	System/g-set
+	System/r-set
+}
+
+(
+		System/rgb-get (  -- r^ g^ b^)
+
+	Gets `System`'s `&r`, `&g` and `&b` ports values.
+
+	# Usage
+
+	```
+	System/rgb-get ( #0fe5 #0fc5 #0f25 )
+	``` 
+)
+%System/rgb-get {
+	System/r-get
+	System/g-get
+	System/b-get
+}

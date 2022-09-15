@@ -1,0 +1,27 @@
+(
+		@print-str ( str* -- )
+		
+	Prints a null byte ( 00 ) terminated string.
+
+	# Usage
+
+	```
+	|0100 ( -> ) [
+		;hello-str ;print-str CALL2
+		HALT
+		BREAK
+	]
+	( data )
+	@hello-str "Hello \s "world! \n \0
+	```
+)
+@print-str ( str* -- ) [
+	&while [
+		LOADk EMIT
+		NEXT ,&while IF
+
+		POP2
+	]
+
+    RETURN
+]
