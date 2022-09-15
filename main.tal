@@ -7,16 +7,40 @@
 
 ( program )
 |0100 ( -> ) [    
-	;hello print-str
+	#2c10 
+	#f1c0 
+	#ffff set-rgb
 
-	HALT
+	#0008 #000a set-xy
 
-	BREAK
+	#41 show-pixel
+	#0002 add-x
+	#41 show-pixel
+	#0002 add-x
+	#41 show-pixel
+	#0002 add-x
+	#41 show-pixel
+	#0002 add-x
+	#41 show-pixel
+	#0002 add-x
+	#41 show-pixel 
+	#0002 add-x
+
+	#0041 #0033 #31 draw-pixel
+
+	;square #0066 #0077 #01 draw-sprite  
+
+	;hello print-string
+	#02 print-digit
+	nl print
+
+	break
 ] 
 
 
 ( data )
 @hello "Hello \s "world! \n \0
+@square ff81 8181 8181 81ff
 
 
 ~libtal/footer

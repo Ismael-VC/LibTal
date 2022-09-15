@@ -1,5 +1,5 @@
 (
-		@print-str ( str* -- )
+		@print-string ( str* -- )
 		
 	Prints a null byte ( 00 ) terminated string.
 
@@ -7,21 +7,21 @@
 
 	```
 	|0100 ( -> ) [
-		;hello-str ;print-str CALL2
-		HALT
-		BREAK
+		;hello ;print-string JSR2
+		
+		#01 .System/halt DEO
+		BRK
 	]
 	( data )
-	@hello-str "Hello \s "world! \n \0
+	@hello "Hello \s "world! \n \0
 	```
 )
-@print-str ( str* -- ) [
+@print-string ( str* -- ) [
 	&while [
-		LOADk EMIT
-		NEXT ,&while IF
+		LDAk .Console/write DEO
+		INC LDAk ,&while JCN
 
 		POP2
 	]
-
-    RETURN
+    JMP2r
 ]

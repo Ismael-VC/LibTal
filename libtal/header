@@ -4,24 +4,28 @@
 ( macros )
 ~libtal/system/macros
 ~libtal/console/macros
+~libtal/screen/macros
 
 
-%CALL2 { JSR2 } ( addr* -- )
-%CALL { JSR }
-%IF { JCN }
-%RETURN { JMPr2 } ( -- )
+%call2 { JSR2 }  ( addr* -- )
+%call { JSR }
+%if { JCN }
+%return { JMPr2 } ( -- )
 %> { GTH }
 %* { MUL }
 %+ { ADD }
 %& { AND }
-%BREAK { BRK }
-%++ { INC2 }
+%break { BRK }
+%++2 { INC2 }
 %\n { 0a }
+%nl { #0a }
 %\s { 20 }
+%sp { #20 }
 %\0 { 00 }
-%WRITE { DEO }
-%SWAP { SWP }
-%SHIFT { SFT }
-%COPY { DUP }
-%LOADk { LDAk }
-%NEXT { ++ LDAk }
+%true { #01 }
+%false { #00 }
+%write { DEO }
+%swap { SWP }
+%shift { SFT }
+%copy { DUP }
+

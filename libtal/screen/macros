@@ -1,0 +1,33 @@
+%set-x { .Screen/x DEO2 } ( coord^ -- )
+%set-y { .Screen/y DEO2 } ( coord^ -- )
+
+%get-x { .Screen/x DEI2 } ( -- coord^ )
+%get-y { .Screen/y DEI2 } ( -- coord^ )
+
+%set-xy { .Screen/y DEO2 .Screen/x DEO2 }
+%get-xy { .Screen/x DEI2 .Screen/y DEI2 }
+
+%inc-x { .Screen/x DEI2 INC2 .Screen/x DEO2 }
+%inc-y { .Screen/y DEI2 INC2 .Screen/y DEO2 }
+
+%add-x { .Screen/x DEI2 ADD2 .Screen/x DEO2 }
+%add-y { .Screen/y DEI2 ADD2 .Screen/y DEO2 }
+
+%draw-pixel { 
+	STH
+	.Screen/y DEO2
+	.Screen/x DEO2
+	STHr
+	.Screen/pixel DEO 
+}
+%show-pixel { .Screen/pixel DEO }
+%set-sprite { .Screen/addr DEO2 }
+%show-sprite { .Screen/addr DEO2 }
+%draw-sprite { 
+	STH
+	.Screen/y DEO2
+	.Screen/x DEO2
+	.Screen/addr DEO2
+	STHr
+	.Screen/sprite DEO
+}

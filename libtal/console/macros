@@ -1,4 +1,6 @@
-%EMIT { .Console/write DEO } ( a -- )
+%next-char { INC2 LDAk }
+%print { .Console/write DEO } ( a -- )
+%print-digit { #30 ADD .Console/write DEO }
 
 (
 		%print-str ( str* -- )
@@ -17,4 +19,4 @@
 	@hello-str "Hello \s "world! \n \0
 	```
 )
-%print-str { ;print-str JSR2 }
+%print-string { ;print-string JSR2 }
