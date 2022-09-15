@@ -1,4 +1,3 @@
-( libtal include header )
 ~libtal/header
 
 
@@ -20,5 +19,4 @@
 @hello "Hello \s "world! \n \0
 
 
-( libtal include footer )
 ~libtal/footer
