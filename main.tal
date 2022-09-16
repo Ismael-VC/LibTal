@@ -28,7 +28,10 @@
 
 	#0041 #0033 #31 draw-pixel
 
-	;square #0066 #0077 #01 draw-sprite  
+	;square #0066 #0077 #01 draw-sprite 
+	;rock #0090 #0077 #01 draw-sprite 
+	;character #0086 #0077 #01 draw-sprite  
+	;new-square #0096 #0077 #83 draw-sprite 
 
 	;hello print-string
 	#02 print-digit
@@ -41,6 +44,9 @@
 ( data )
 @hello "Hello \s "world! \n \0
 @square ff81 8181 8181 81ff
+@rock 3c4e 9ffd f962 3c00
+@character 3c7e 5a7f 1b3c 5a18
+@new-square 017f 7b73 6343 7fff 007c 7c7c 7c7c 0000
 
 
 ~libtal/footer

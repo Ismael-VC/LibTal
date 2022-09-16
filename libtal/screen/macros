@@ -31,3 +31,11 @@
 	STHr
 	.Screen/sprite DEO
 }
+
+%get-width { .Screen/width DEI2 }
+%set-width { .Screen/width DEO2 }
+%get-height { .Screen/height DEI2 }
+%set-height { .Screen/height DEO2 }
+
+%get-size { .Screen/width DEI2 .Screen/height DEI2 }
+%set-size { .Screen/height DEO2 .Screen/width DEO2 }
